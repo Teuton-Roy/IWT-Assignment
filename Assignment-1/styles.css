@@ -6,7 +6,7 @@ body {
 }
 
 nav {
-    background-color: #4CAF50;
+    background-color:rgb(86, 73, 73);
     color: white;
     text-align: center;
     padding: 20px;
@@ -26,9 +26,10 @@ nav h1 {
 .img-container img {
     /* max-width: 100%; */
 
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 600px;
     height: auto;
     margin: 20px;
+    border-radius: 50%;
 }
 
