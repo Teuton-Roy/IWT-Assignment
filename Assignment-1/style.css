@@ -63,10 +63,11 @@ h3 {
 }
 
 form {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
     text-align: center;
     background-color: #F0FFFF;
+    border-radius: 80px;
 }
 
 form label {
