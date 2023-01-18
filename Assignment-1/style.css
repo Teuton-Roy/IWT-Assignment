@@ -18,6 +18,12 @@ nav img {
     margin: 0 20px;
 }
 
+nav h1{
+    /* align-items: flex-end; */
+    text-align: left;
+    justify-content: space-between;
+}
+
 nav ul {
     list-style-type: none;
     display: flex;
@@ -60,6 +66,7 @@ form {
     width: 80%;
     margin: 0 auto;
     text-align: center;
+    background-color: #F0FFFF;
 }
 
 form label {
@@ -98,3 +105,16 @@ form input[type="submit"]:hover {
 form hr {
     margin: 40px 0;
 }
+
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: #161616;
+    color: rgb(151, 164, 176);
+}
+footer h2{
+    padding: 10px;
+}
+ footer marquee{
+    /* padding-buttom: 500px; */
+ }
