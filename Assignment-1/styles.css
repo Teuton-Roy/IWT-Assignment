@@ -30,6 +30,16 @@ nav h1 {
     width: 600px;
     height: auto;
     margin: 20px;
-    border-radius: 50%;
+    border-radius: 50px;
 }
 
+footer{
+    background-color: black;
+    color: azure;
+    align-items: center;
+}
+footer audio{
+    margin-left: 700px;
+    /* display: block;
+    align-items: center; */
+}
