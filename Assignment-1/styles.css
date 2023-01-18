@@ -32,11 +32,3 @@ nav h1 {
     margin: 20px;
 }
 
-/* Copy code
-@media screen and (max-width: 600px) {
-    /* styles for screens smaller than 600px */
-}
-
-@media screen and (min-width: 601px) {
-    /* styles for screens larger than 600px; */
-} */
