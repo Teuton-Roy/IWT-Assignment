@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav h1 {
+    margin: 0;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.img-container img {
+    /* max-width: 100%; */
+
+    height: 500px;
+    width: 500px;
+    height: auto;
+    margin: 20px;
+}
+
+/* Copy code
+@media screen and (max-width: 600px) {
+    /* styles for screens smaller than 600px */
+}
+
+@media screen and (min-width: 601px) {
+    /* styles for screens larger than 600px; */
+} */
