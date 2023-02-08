@@ -1,0 +1,71 @@
+
+<!-- make a web page with two input field with some best user view css and using javascript take two vactors in that input field and 
+show their dot product[feature: try/catch] -->
+
+
+<html>
+  <head>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+      input[type="text"] {
+        margin: 10px 0;
+        padding: 5px;
+        font-size: 16px;
+        width: 200px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: cornflowerblue;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      button:hover{
+        border-radius: 100px;
+        background-color: rgb(22, 142, 126);
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dot Product Calculator</h1>
+      <input type="text" id="vector1" placeholder="Enter vector 1 (comma-separated)">
+      <input type="text" id="vector2" placeholder="Enter vector 2 (comma-separated)">
+      <button id="calculate-button">Calculate</button>
+      <p id="result"></p>
+    </div>
+    <script>
+      document.getElementById("calculate-button").addEventListener("click", function() {
+        let vector1 = document.getElementById("vector1").value;
+        let vector2 = document.getElementById("vector2").value;
+        try {
+          vector1 = vector1.split(",").map(function(x) { return parseFloat(x); });
+          vector2 = vector2.split(",").map(function(x) { return parseFloat(x); });
+          if (vector1.length !== vector2.length) {
+            throw "Error: Vectors must have the same length.";
+          }
+          let dotProduct = 0;
+          for (let i = 0; i < vector1.length; i++) {
+            dotProduct += vector1[i] * vector2[i];
+          }
+          document.getElementById("result").innerHTML = "The dot product is: " + dotProduct;
+        } catch (error) {
+          document.getElementById("result").innerHTML = error;
+        }
+      });
+    </script>
+    <marquee behavior="" direction="lt">©copyright 2023, Teuton Roy</marquee>
+  </body>
+</html>
