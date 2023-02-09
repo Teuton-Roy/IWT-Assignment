@@ -1,177 +1,37 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question - 2</title>
-    add css link  -->
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <!-- add javascript link -->
-    <!-- <script src="script.js"></script> -->
-<!-- </head>
-<body>
-    <div class="matrix-container">
-        <div class="matrix-input">
-          <h3>Matrix 1</h3>
-          <textarea id="matrix1"></textarea>
-        </div>
-        <div class="matrix-input">
-          <h3>Matrix 2</h3>
-          <textarea id="matrix2"></textarea>
-        </div>
-      </div>
-      <div class="button-container">
-        <button id="add-button">Add</button>
-        <button id="subtract-button">Subtract</button>
-        <button id="multiply-button">Multiply</button>
-      </div>
-    <div id="result"></div>      
-</body>
-</html>-->
-
-
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    #matrix-inputs {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-    }
-
-    textarea {
-      width: 200px;
-      height: 100px;
-      margin-right: 20px;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin-right: 20px;
-    }
-
-    #result {
-      border: 1px solid gray;
-      padding: 20px;
-      margin-top: 20px;
-      width: 400px;
-      height: 100px;
-      overflow-y: scroll;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Question-2</title>
 </head>
 <body>
-  <div id="matrix-inputs">
-    <h3>Matrix-1</h3>
-    <textarea id="matrix1"></textarea>
-    <h3>Matrix-2</h3>
-    <textarea id="matrix2"></textarea>
+  <div id="container">
+    <h2>Matrix Calculator</h2>
+    <div id="matrix-inputs">
+      <div class="matrix-input">
+        <h3>Matrix-1</h3>
+        <textarea id="matrix1"></textarea>
+      </div>
+      <div class="matrix-input">
+        <h3>Matrix-2</h3>
+        <textarea id="matrix2"></textarea>
+      </div>
+    </div>
+    <div id="calculate-btns">
+      <button id="add-button">Add</button>
+      <button id="subtract-button">Subtract</button>
+      <button id="multiply-button">Multiply</button>
+      <button id="clear-button">Clear</button>
+    </div>
+    <div id="result-container">
+      <h3>Result:</h3>
+      <div id="result"></div>
+    </div>
   </div>
-  <div>
-    <button id="add-button">Add</button>
-    <button id="subtract-button">Subtract</button>
-    <button id="multiply-button">Multiply</button>
-  </div>
-  <div id="result"></div>
-
-  <script>
-    const matrix1Input = document.querySelector('#matrix1');
-    const matrix2Input = document.querySelector('#matrix2');
-    const addButton = document.querySelector('#add-button');
-    const subtractButton = document.querySelector('#subtract-button');
-    const multiplyButton = document.querySelector('#multiply-button');
-    const resultDiv = document.querySelector('#result');
-
-    function parseMatrix(input) {
-      const matrix = input.value.split('\n').map(row => row.split(' ').map(Number));
-      return matrix;
-    }
-
-    function addMatrices(matrix1, matrix2) {
-      try {
-        const result = [];
-        for (let i = 0; i < matrix1.length; i++) {
-          result[i] = [];
-          for (let j = 0; j < matrix1[i].length; j++) {
-            result[i][j] = matrix1[i][j] + matrix2[i][j];
-          }
-        }
-        return result;
-      } catch (err) {
-        console.error("Error adding matrices:", err);
-        return null;
-      }
-    }
-
-    function subtractMatrices(matrix1, matrix2) {
-      try {
-        const result = [];
-        for (let i = 0; i < matrix1.length; i++) {
-          result[i] = [];
-          for (let j = 0; j < matrix1[i].length; j++) {
-            result[i][j] = matrix1[i][j] - matrix2[i][j];
-          }
-        }
-        return result;
-      } catch (err) {
-        console.error("Error subtracting matrices:", err);
-        return null;
-      }
-    }
-
-    function multiplyMatrices(matrix1, matrix2) {
-      try {
-        const result = [];
-        for (let i = 0; i < matrix1.length; i++) {
-          result[i] = [];
-          for (let j = 0; j < matrix2[0].length; j++) {
-            let sum = 0;
-            for (let k = 0; k < matrix1[0].length; k++) {
-              sum += matrix1[i][k] * matrix2[k][j];
-            }
-            result[i][j] = sum;
-          }
-        }
-        return result;
-      } catch (err) {
-        console.error("Error multiplying matrices:", err);
-        return null;
-      }
-    }
-
-    function displayMatrix(matrix) {
-      if (matrix) {
-        resultDiv.innerHTML = matrix.map(row => row.join(' ')).join('\n');
-      } else {
-        resultDiv.innerHTML = "Error: Matrices are not compatible for this operation.";
-      }
-    }
-
-    addButton.addEventListener('click', () => {
-      const matrix1 = parseMatrix(matrix1Input);
-      const matrix2 = parseMatrix(matrix2Input);
-      const result = addMatrices(matrix1, matrix2);
-      displayMatrix(result);
-    });
-
-    subtractButton.addEventListener('click', () => {
-      const matrix1 = parseMatrix(matrix1Input);
-      const matrix2 = parseMatrix(matrix2Input);
-      const result = subtractMatrices(matrix1, matrix2);
-      displayMatrix(result);
-    });
-
-    multiplyButton.addEventListener('click', () => {
-      const matrix1 = parseMatrix(matrix1Input);
-      const matrix2 = parseMatrix(matrix2Input);
-      const result = multiplyMatrices(matrix1, matrix2);
-      displayMatrix(result);
-    });
-
-  </script>
+  <marquee behavior="" direction="lt">©Copyright, Teuton Roy'23.</marquee>
 </body>
 </html>
-
