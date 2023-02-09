@@ -49,14 +49,15 @@ button {
   background-color: #4CAF50;
   color: #fff;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   cursor: pointer;
   margin-right: 20px;
 }
 
 button:hover {
-  border-radius: 50px;
-  background-color: #112a11;
+  border-radius: 80px;
+  background-color: #183d18;
+  box-shadow: 5px 5px 10px rgba(39, 38, 38, 0.1);
 }
 
 #result-container {
@@ -70,4 +71,21 @@ button:hover {
 #result {
   font-size: 18px;
   white-space: pre-wrap;
+}
+
+nav{
+  background-color: #0f0f0f;
+  color: #fff;
+  border-radius: 20px;
+  text-align: center;
+}
+nav h3{
+  padding: 10px;
+  color: #e96161;
+}
+
+footer{
+  background-color: #0f0f0f;
+  color: #e96161;
+  border-radius: 20px;
 }
