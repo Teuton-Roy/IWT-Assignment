@@ -24,6 +24,7 @@
         border: none;
         border-radius: 10px;
         cursor: pointer;
+        margin: 5px;
       }
       button:hover{
         border-radius: 100px;
@@ -71,6 +72,7 @@
       <input type="text" id="vector1" placeholder="Enter vector 1 (comma-separated)">
       <input type="text" id="vector2" placeholder="Enter vector 2 (comma-separated)">
       <button id="calculate-button">Calculate</button>
+      <button id="clear">Clear</button>
       <p id="result"></p>
     </div>
     <br>
@@ -92,6 +94,13 @@
         } catch (error) {
           document.getElementById("result").innerHTML = error;
         }
+      });
+
+      // Clear button//
+      document.getElementById("clear").addEventListener("click", function() {
+        document.getElementById("vector1").value = "";
+        document.getElementById("vector2").value = "";
+        document.getElementById("result").innerHTML = "";
       });
     </script>
     <footer>
