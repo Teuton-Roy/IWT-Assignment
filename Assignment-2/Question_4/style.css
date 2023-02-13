@@ -7,14 +7,19 @@ header {
     color: #fff;
     padding: 20px;
     text-align: center;
+    margin: 10px;
+    border-radius: 20px;
 }
+
 
 nav h3 {
     margin: 0;
 }
 
 #container {
-    height: 600px;
+    background-color: rgb(136, 191, 183);
+    border-radius: 50px;
+    height: 550px;
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
@@ -77,4 +82,5 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
+    border-radius: 30px;
 }
