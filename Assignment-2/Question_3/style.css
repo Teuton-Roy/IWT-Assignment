@@ -25,6 +25,7 @@ body {
   }
   
   #container {
+  height: 250px;
   background-color: #b9b5b5;
   padding: 20px;
   border-radius: 10px;
