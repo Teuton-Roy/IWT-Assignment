@@ -14,6 +14,7 @@ nav h3 {
 }
 
 #container {
+    height: 600px;
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
@@ -24,6 +25,7 @@ nav h3 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    padding: 40px;
 }
 
 input[type="number"] {
