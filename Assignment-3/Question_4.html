@@ -1,0 +1,134 @@
+<!-- 4. Create one or more registration webpages of your choice using HTML form. The forms altogether
+should contain the following elements: textbox, password, email, checkbox, radio buttons, date picker,
+file browser button, numeric field, submit button, and reset button with their expected behavior, except
+maybe the submit button whose behavior will be utilized when developing the server side.
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question_4</title>
+    <style>
+        /* Apply a sans-serif font to the entire page */
+body {
+  font-family: sans-serif;
+}
+
+h1{
+  text-align: center;
+}
+/* Center the form */
+form {
+  max-width: 500px;
+  margin: auto;
+}
+
+/* Style the form labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Style the text input and password fields */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Style the checkbox input */
+input[type="checkbox"] {
+  margin-bottom: 15px;
+}
+
+/* Style the radio input */
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Style the file input */
+input[type="file"] {
+  margin-bottom: 15px;
+}
+
+/* Style the submit and reset buttons */
+input[type="submit"],
+input[type="reset"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+/* Change the background color and cursor when hovering over the buttons */
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #3e8e41;
+  cursor: pointer;
+}
+
+/* Set the width of the form inputs to 50% for smaller screens */
+@media (max-width: 600px) {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="date"],
+  input[type="number"],
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="file"],
+  input[type="submit"],
+  input[type="reset"] {
+    width: 50%;
+  }
+}
+
+    </style>
+</head>
+<body>
+	<h1>Registration Form</h1>
+	<form action="submit.php" method="post">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" required><br>
+
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required><br>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" required><br>
+
+		<label for="newsletter">Subscribe to NIT-JSR:</label>
+		<input type="checkbox" id="newsletter" name="newsletter" checked><br>
+
+		<label for="gender">Gender:</label>
+		<input type="radio" id="male" name="gender" value="male" checked>
+		<label for="male">Male</label>
+		<input type="radio" id="female" name="gender" value="female">
+		<label for="female">Female</label><br>
+
+		<label for="birthdate">Date of Birth:</label>
+		<input type="date" id="birthdate" name="birthdate" required><br>
+
+		<label for="resume">Resume:</label>
+		<input type="file" id="resume" name="resume" accept="pdf/*"><br>
+
+		<label for="age">Age:</label>
+		<input type="number" id="age" name="age" min="18" max="100" required><br>
+
+		<input type="submit" value="Register">
+		<input type="reset" value="Reset">
+	</form>
+</body>
+</html>
