@@ -1,124 +1,143 @@
-<!--  -->
-
+<!-- 10. Create a text input, and input a vector from user. Create 5 buttons named “Average”, “Sum”,
+“Product”, “Max” and “Min” respectively, that will perform the task mentioned in the button names, on
+the array. On press of the button, the output should be shown in another textbox below the pressed button
+(these textboxes should not be visible by default). The complete page should be centered horizontally.
+The buttons should get green background on hovering over them. These tasks must be done using reduce
+function. -->
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Question_10</title>
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      input[type="text"], input[type="button"], textarea {
-        font-size: 1rem;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        margin-bottom: 10px;
-      }
-      input[type="button"] {
-        background-color: #fff;
-        color: #333;
-        cursor: pointer;
-      }
-      input[type="button"]:hover {
-        background-color: #0f0;
-        color: #fff;
-      }
-      .result {
-        display: none;
-        width: 100%;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 10px;
-        margin-top: 10px;
-        box-sizing: border-box;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Array Operations</h1>
-    <input type="text" id="input-array" placeholder="Enter array separated by comma (e.g. 1,2,3)">
-    <br>
-    <input type="button" id="average-btn" value="Average">
-    <input type="button" id="sum-btn" value="Sum">
-    <input type="button" id="product-btn" value="Product">
-    <input type="button" id="max-btn" value="Max">
-    <input type="button" id="min-btn" value="Min">
-    <br>
-    <textarea id="average-result" class="result" readonly></textarea>
-    <textarea id="sum-result" class="result" readonly></textarea>
-    <textarea id="product-result" class="result" readonly></textarea>
-    <textarea id="max-result" class="result" readonly></textarea>
-    <textarea id="min-result" class="result" readonly></textarea>
-    <script>
-      const inputArray = document.getElementById("input-array");
-      const averageBtn = document.getElementById("average-btn");
-      const sumBtn = document.getElementById("sum-btn");
-      const productBtn = document.getElementById("product-btn");
-      const maxBtn = document.getElementById("max-btn");
-      const minBtn = document.getElementById("min-btn");
-      const averageResult = document.getElementById("average-result");
-      const sumResult = document.getElementById("sum-result");
-      const productResult = document.getElementById("product-result");
-      const maxResult = document.getElementById("max-result");
-      const minResult = document.getElementById("min-result");
-      
-      function parseInputArray() {
-        const inputString = inputArray.value.trim();
-        if (inputString === "") {
-          return [];
-        }
-        const inputArray = inputString.split(",").map(str => parseFloat(str.trim()));
-        return inputArray.filter(num => !isNaN(num));
-      }
-      
-      function calculateAverage() {
-        const inputArray = parseInputArray();
-        const avg = inputArray.reduce((acc, val) => acc + val, 0) / inputArray.length;
-        averageResult.value = `Average: ${avg.toFixed(2)}`;
-        averageResult.style.display = "block";
-      }
-      
-      function calculateSum() {
-        const inputArray = parseInputArray();
-        const sum = inputArray.reduce((acc, val) => acc + val, 0);
-        sumResult.value = `Sum: ${sum}`;
-        sumResult.style.display = "block";
-        }
+<head>
+	<title>Array Functions</title>
+	<style>
+		/* Center the page horizontally */
+		body {
+			display: flex;
+			justify-content: center;
+		}
+		
+		/* Style the input and buttons */
+		input, button {
+			padding: 5px;
+			font-size: 16px;
+			margin-right: 5px;
+		}
+		
+		/* Style the result textboxes */
+		.result {
+			display: none;
+			margin-top: 10px;
+			padding: 5px;
+			font-size: 16px;
+		}
+		
+		/* Style the buttons on hover */
+		button:hover {
+			background-color: green;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<!-- Input vector from user -->
+	<label for="input">Enter a vector:</label>
+	<input type="text" id="input">
+	
+	<!-- Buttons for array functions -->
+	<button id="average">Average</button>
+	<button id="sum">Sum</button>
+	<button id="product">Product</button>
+	<button id="max">Max</button>
+	<button id="min">Min</button>
+	
+	<!-- Result textboxes -->
+	<div id="average-result" class="result"></div>
+	<div id="sum-result" class="result"></div>
+	<div id="product-result" class="result"></div>
+	<div id="max-result" class="result"></div>
+	<div id="min-result" class="result"></div>
+	
+	<script>
+		// Get the input and result elements
+		const input = document.getElementById('input');
+		const averageResult = document.getElementById('average-result');
+		const sumResult = document.getElementById('sum-result');
+		const productResult = document.getElementById('product-result');
+		const maxResult = document.getElementById('max-result');
+		const minResult = document.getElementById('min-result');
+		
+		// Parse the input value into an array
+		function parseInput() {
+			const vector = input.value.split(',').map(parseFloat);
+			return vector;
+		}
+		
+		// Calculate the average of the vector using reduce function
+		function calculateAverage(vector) {
+			const sum = vector.reduce((acc, curr) => acc + curr, 0);
+			const average = sum / vector.length;
+			return average;
+		}
+		
+		// Calculate the sum of the vector using reduce function
+		function calculateSum(vector) {
+			const sum = vector.reduce((acc, curr) => acc + curr, 0);
+			return sum;
+		}
+		
+		// Calculate the product of the vector using reduce function
+		function calculateProduct(vector) {
+			const product = vector.reduce((acc, curr) => acc * curr, 1);
+			return product;
+		}
+		
+		// Find the max value in the vector using reduce function
+		function findMax(vector) {
+			const max = vector.reduce((acc, curr) => curr > acc ? curr : acc, -Infinity);
+			return max;
+		}
+		
+		// Find the min value in the vector using reduce function
+		function findMin(vector) {
+			const min = vector.reduce((acc, curr) => curr < acc ? curr : acc, Infinity);
+			return min;
+		}
+		
+		// Add event listeners to the buttons
+		document.getElementById('average').addEventListener('click', () => {
+			const vector = parseInput();
+			const average = calculateAverage(vector);
+			averageResult.textContent = `Average: ${average}`;
+			averageResult.style.display = 'block';
+    });
 
-        function calculateProduct() {
-        const inputArray = parseInputArray();
-        const product = inputArray.reduce((acc, val) => acc * val, 1);
-        productResult.value = `Product: ${product}`;
-        productResult.style.display = "block";
-        }
-        
-        function calculateMax() {
-        const inputArray = parseInputArray();
-        const max = inputArray.reduce((acc, val) => Math.max(acc, val), -Infinity);
-        maxResult.value = `Max: ${max}`;
-        maxResult.style.display = "block";
-        }
-
-        function calculateMin() {
-        const inputArray = parseInputArray();
-        const min = inputArray.reduce((acc, val) => Math.min(acc, val), Infinity);
-        minResult.value = `Min: ${min}`;
-        minResult.style.display = "block";
-        }
-
-        averageBtn.addEventListener("click", calculateAverage);
-        sumBtn.addEventListener("click", calculateSum);
-        productBtn.addEventListener("click", calculateProduct);
-        maxBtn.addEventListener("click", calculateMax);
-        minBtn.addEventListener("click", calculateMin);
-    </script>
-    </body>
-    </html>
+    document.getElementById('sum').addEventListener('click', () => {
+		const vector = parseInput();
+		const sum = calculateSum(vector);
+		sumResult.textContent = `Sum: ${sum}`;
+		sumResult.style.display = "block";
+	});
+	
+	document.getElementById('product').addEventListener('click', () => {
+		const vector = parseInput();
+		const product = calculateProduct(vector);
+		productResult.textContent = `Product: ${product}`;
+		productResult.style.display = "block";
+	});
+	
+	document.getElementById('max').addEventListener('click', () => {
+		const vector = parseInput();
+		const max = findMax(vector);
+		maxResult.textContent = `Max: ${max}`;
+		maxResult.style.display = "block";
+	});
+	
+	document.getElementById('min').addEventListener('click', () => {
+		const vector = parseInput();
+		const min = findMin(vector);
+		minResult.textContent = `Min: ${min}`;
+		minResult.style.display = "block";
+	});
+</script>
+</body>
+</html>
