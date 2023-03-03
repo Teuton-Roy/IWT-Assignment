@@ -1,0 +1,124 @@
+<!--  -->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Question_10</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      input[type="text"], input[type="button"], textarea {
+        font-size: 1rem;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
+      input[type="button"] {
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+      }
+      input[type="button"]:hover {
+        background-color: #0f0;
+        color: #fff;
+      }
+      .result {
+        display: none;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 10px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Array Operations</h1>
+    <input type="text" id="input-array" placeholder="Enter array separated by comma (e.g. 1,2,3)">
+    <br>
+    <input type="button" id="average-btn" value="Average">
+    <input type="button" id="sum-btn" value="Sum">
+    <input type="button" id="product-btn" value="Product">
+    <input type="button" id="max-btn" value="Max">
+    <input type="button" id="min-btn" value="Min">
+    <br>
+    <textarea id="average-result" class="result" readonly></textarea>
+    <textarea id="sum-result" class="result" readonly></textarea>
+    <textarea id="product-result" class="result" readonly></textarea>
+    <textarea id="max-result" class="result" readonly></textarea>
+    <textarea id="min-result" class="result" readonly></textarea>
+    <script>
+      const inputArray = document.getElementById("input-array");
+      const averageBtn = document.getElementById("average-btn");
+      const sumBtn = document.getElementById("sum-btn");
+      const productBtn = document.getElementById("product-btn");
+      const maxBtn = document.getElementById("max-btn");
+      const minBtn = document.getElementById("min-btn");
+      const averageResult = document.getElementById("average-result");
+      const sumResult = document.getElementById("sum-result");
+      const productResult = document.getElementById("product-result");
+      const maxResult = document.getElementById("max-result");
+      const minResult = document.getElementById("min-result");
+      
+      function parseInputArray() {
+        const inputString = inputArray.value.trim();
+        if (inputString === "") {
+          return [];
+        }
+        const inputArray = inputString.split(",").map(str => parseFloat(str.trim()));
+        return inputArray.filter(num => !isNaN(num));
+      }
+      
+      function calculateAverage() {
+        const inputArray = parseInputArray();
+        const avg = inputArray.reduce((acc, val) => acc + val, 0) / inputArray.length;
+        averageResult.value = `Average: ${avg.toFixed(2)}`;
+        averageResult.style.display = "block";
+      }
+      
+      function calculateSum() {
+        const inputArray = parseInputArray();
+        const sum = inputArray.reduce((acc, val) => acc + val, 0);
+        sumResult.value = `Sum: ${sum}`;
+        sumResult.style.display = "block";
+        }
+
+        function calculateProduct() {
+        const inputArray = parseInputArray();
+        const product = inputArray.reduce((acc, val) => acc * val, 1);
+        productResult.value = `Product: ${product}`;
+        productResult.style.display = "block";
+        }
+        
+        function calculateMax() {
+        const inputArray = parseInputArray();
+        const max = inputArray.reduce((acc, val) => Math.max(acc, val), -Infinity);
+        maxResult.value = `Max: ${max}`;
+        maxResult.style.display = "block";
+        }
+
+        function calculateMin() {
+        const inputArray = parseInputArray();
+        const min = inputArray.reduce((acc, val) => Math.min(acc, val), Infinity);
+        minResult.value = `Min: ${min}`;
+        minResult.style.display = "block";
+        }
+
+        averageBtn.addEventListener("click", calculateAverage);
+        sumBtn.addEventListener("click", calculateSum);
+        productBtn.addEventListener("click", calculateProduct);
+        maxBtn.addEventListener("click", calculateMax);
+        minBtn.addEventListener("click", calculateMin);
+    </script>
+    </body>
+    </html>
