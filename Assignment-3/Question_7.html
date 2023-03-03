@@ -1,0 +1,88 @@
+<!-- 7. Modify the page in project 5, to include a navigation bar as shown in the image below. Current selected
+option (“Home”) will have text colour in white, and lightblue background colour. Normal unselected
+option (like “News”) will have white text colour on black background, and when an option will be
+hovered on (like “About Us”, mouse not visible), its text colour will become black with lightgreen
+background color. The navbar, overall will be 20 pixels below the banner above, no space on left, and
+will cover 25% of screen width. The texts in the navigation bar has 10 pixels of padding on top/bottom
+and centred to the corresponding option. Font family of the texts is Arial, and font size is default.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question_7</title>
+    <style>
+        .banner {
+        background-color: lightgrey;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 50px 0;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        z-index: 9999;
+        }
+
+        /* Style the banner text */
+        .banner-text {
+        font-size: 1cm;
+        font-weight: 600;
+        text-align: center;
+        color: #8c03fc;
+        }
+
+        .navbar {
+        position: fixed;
+        top: 160px;
+        left: 0;
+        width: 60%;
+        height: 50px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        }
+
+        .navbar a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        width: 25%;
+        text-decoration: none;
+        font-family: Arial;
+        }
+
+        .navbar .home {
+        background-color: lightblue;
+        color: white;
+        }
+
+        .navbar .news{
+        background-color: black;
+        color: white;
+        }
+
+        .navbar .about{
+        background-color: lightgreen;
+        color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-text">
+          Welcome to NITJSR
+        </div>
+    </div>    
+    <div class="navbar">
+        <a href="#" class="home">Home</a>
+        <a href="#" class="news">News</a>
+        <a href="#" class="about">About Us</a>
+    </div>          
+</body>
+</html>
