@@ -9,11 +9,17 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <label for="event-date">Select your Date of Birth:</label>
-        <input type="date" id="event-date">
-        <p>Your age on this event:</p>
-        <input type="text" placeholder="calculate age" id="age-on-event" readonly>
-    </div>
+    <!-- <h1>Age Calculator</h1>
+	<label for="dob">Enter your date of birth:</label>
+	<input type="date" id="dob" name="dob">
+	<button onclick="calculateAge()">Calculate Age</button>
+	<p id="result"></p> -->
+    <h1>Age Calculator</h1>
+	<form id="Age">
+		<label for="dob">Enter your date of birth:</label>
+		<input type="date" id="dob">
+		<button type="submit">Calculate age</button>
+	</form>
+    <p id="age"></p>
 </body>
 </html>

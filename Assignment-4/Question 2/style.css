@@ -1,36 +1,17 @@
-body{
-  background: url(img.jpg);
-  background-size: cover;
+h1{
+    text-align: center;
+    color: #0000ff;
 }
 
-.container{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 20% auto;
+
+form{
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-label {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #ccc;
-}
-
-.container p{
-  color: #ccc;
-  font-weight: 900;
-  padding: 10px;
-}
-
-input[type="date"], input[type="text"] {
-  font-size: 18px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-}
-
-input[type="text"] {
-  background-color: #f5f5f5;
+p{
+    text-align: center;
 }
