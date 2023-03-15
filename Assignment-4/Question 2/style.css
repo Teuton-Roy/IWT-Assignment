@@ -2,13 +2,25 @@ body{
   background: url(img.jpg);
   background-size: cover;
 }
-/* *{
-  box-sizing: border-box;
-} */
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20% auto;
+}
 
 label {
   font-size: 18px;
   margin-bottom: 10px;
+  color: #ccc;
+}
+
+.container p{
+  color: #ccc;
+  font-weight: 900;
+  padding: 10px;
 }
 
 input[type="date"], input[type="text"] {
