@@ -1,0 +1,42 @@
+h1 {
+    text-align: center;
+    color: rgb(58, 167, 151);
+}
+
+form {
+    margin: 0 auto;
+    width: 500px;
+}
+
+label,
+select {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+select:disabled {
+    color: #ccc;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    display: block;
+    background-color: #14ad30;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #010e02;
+}
