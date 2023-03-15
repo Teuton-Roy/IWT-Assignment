@@ -61,6 +61,10 @@ body{
     background-color: #d9534f;
     color: #fff;
   }
+
+  .calculator-keys button.clear{
+    width: 100%;
+  }
   
   .calculator-keys button.clear:hover {
     background-color: #c9302c;
