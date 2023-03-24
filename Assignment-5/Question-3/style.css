@@ -1,0 +1,74 @@
+/* Style for item list container */
+#item-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+/* Style for individual item container */
+.item {
+  width: 300px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Style for item image */
+.item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Style for item info container */
+.item-info {
+  padding: 10px;
+}
+
+/* Style for item name */
+.item-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* Style for item price */
+.price {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+/* Style for original price */
+.original-price {
+  color: #555;
+}
+
+/* Style for discounted price */
+.discounted-price {
+  color: red;
+}
+
+/* Style for pagination container */
+#pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Style for pagination links */
+#pagination a {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Style for active pagination link */
+#pagination a.active {
+  background-color: #333;
+  color: #fff;
+}
