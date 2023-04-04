@@ -12,7 +12,6 @@ const server = http.createServer((req, res) => {
 	if (today < new Date(today.getFullYear(), dob.getMonth(), dob.getDate())) {
 		age--;
 	}
-	
 	// render the age as a webpage
 	res.writeHead(200, {'Content-Type': 'text/html'});
 	res.write('<html><head><title>Your Age</title></head><body>');
